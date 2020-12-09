@@ -3,9 +3,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./app/models");
-const fs = require("fs");
-let dbUser = fs.readFileSync(process.env.DB_USERNAME);
-let dbPassword = fs.readFileSync(process.env.DB_PASSWORD);
+// const fs = require("fs");
+// let dbUser = fs.readFileSync(process.env.DB_USERNAME);
+// let dbPassword = fs.readFileSync(process.env.DB_PASSWORD);
 
 const Role = db.role;
 
@@ -27,7 +27,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.sbzlz.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`, {
+  .connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sbzlz.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
