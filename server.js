@@ -25,7 +25,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(process.env.DB_PROJECT, {
+  .connect('process.env.DB_PROJECT', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
