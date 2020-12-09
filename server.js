@@ -1,9 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
+// require("dotenv").config();
 // const dbProject = process.env.DB_PROJECT;
 const db = require("./app/models");
+const url = require("./app/config/dbConfig")
 const Role = db.role;
 
 // const authRouter = require("./app/routes/authRoute");
@@ -24,7 +25,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(process.env.DB_PROJECT, {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
