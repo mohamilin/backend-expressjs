@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
-const dbProject = process.env.DB_PROJECT;
+require("dotenv").config({path: 'DB_PROJECT'});
+// const dbProject = process.env.DB_PROJECT;
 const db = require("./app/models");
 const Role = db.role;
 
@@ -24,9 +24,11 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(dbProject, {
+  .connect(process.env.DB_PROJECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true
+
   })
   .then(() => {
     console.log("Success connect MongoDB");
