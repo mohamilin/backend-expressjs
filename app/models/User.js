@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
   roles: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "ROLE",
+      ref: "roles",
     },
   ],
 });
