@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./app/models");
-
+const fs = require("fs");
 let dbUser = fs.readFileSync(process.env.DB_USERNAME);
 let dbPassword = fs.readFileSync(process.env.DB_PASSWORD);
 
