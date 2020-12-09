@@ -27,7 +27,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sbzlz.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`, {
+  .connect(`${DB_PROJECT}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
