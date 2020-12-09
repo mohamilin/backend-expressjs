@@ -25,10 +25,9 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(url, {
+  .connect(`${url}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
 
   })
   .then(() => {
