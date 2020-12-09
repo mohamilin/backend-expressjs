@@ -25,7 +25,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect(`${url}`, {
+  .connect('ongodb+srv://root:root@cluster0.sbzlz.mongodb.net/project?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
