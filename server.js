@@ -2,9 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// const dbProject = process.env.DB_PROJECT;
 const db = require("./app/models");
-const uri = require("./app/config/dbConfig")
+
+let dbUser = fs.readFileSync(process.env.DB_USERNAME);
+let dbPassword = fs.readFileSync(process.env.DB_PASSWORD);
+
 const Role = db.role;
 
 // const authRouter = require("./app/routes/authRoute");
@@ -25,7 +27,7 @@ app.use(
 
 // connect to mongoDB
 db.mongoose
-  .connect('uri', {
+  .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.sbzlz.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
