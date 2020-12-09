@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config({path: 'DB_PROJECT'});
+require("dotenv").config();
 // const dbProject = process.env.DB_PROJECT;
 const db = require("./app/models");
 const Role = db.role;
