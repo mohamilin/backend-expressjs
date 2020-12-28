@@ -96,7 +96,7 @@ module.exports = {
               username: user.username,
               email: user.email,
               roles: authorization,
-              accessToken: token
+              accessToken: token,
           });
       });
 
