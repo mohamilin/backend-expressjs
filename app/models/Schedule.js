@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const moment = require("moment");
+// import moment from 'moment';
 
 const scheduleSchema = new mongoose.Schema({
     subjectId: {

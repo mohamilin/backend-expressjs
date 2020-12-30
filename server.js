@@ -53,6 +53,8 @@ app.get("/", (req, res) => {
 // app.use("/api", authRouter);
 require("./app/routes/authRoute")(app);
 require("./app/routes/userRoute")(app);
+// route for except auth and user
+require("./app/routes/apiRoute")(app);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
