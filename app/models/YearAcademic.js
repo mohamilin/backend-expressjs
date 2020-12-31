@@ -8,10 +8,10 @@ const yearAcademicSchema = new mongoose.Schema({
     },
     semester : {
         type: String,
-        enum: ['ganjil', 'genap'],
-        default: 'ganjil'
+        enum: ['Ganjil', 'Genap'],
+        default: 'Ganjil'
     }
 });
 
 const YearAcademic = new mongoose.model('years', yearAcademicSchema);
-module.exports ={yearAcademicSchema}
+module.exports ={YearAcademic}
