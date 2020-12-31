@@ -5,21 +5,24 @@ const classSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    classId: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'classes',
-        required: true
-    }],
     yearAcademicId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'years',
         required: true
     },
-    userId: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
-        required: true
+    subjectDetail : [{
+        classId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'classes',
+            required: true
+        },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'users',
+            required: true
+        }
     }]
+   
 });
 
 const School = new mongoose.model('schools', classSchema);
