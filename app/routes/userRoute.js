@@ -1,5 +1,6 @@
 const {authJwt} = require("../middleware");
 const { allUserAccess, userAccess, moderatorAccess, adminAccess } = require("../controllers/userController");
+const { viewUser } = require("../controllers/authController");
 
 module.exports = function(app) {
     app.use(function(req, res, next) {
@@ -9,6 +10,7 @@ module.exports = function(app) {
         );
         next();
       });
+      app.get('/api/data/user', viewUser);
       app.get("/api/all", allUserAccess);
 
       app.get("/api/user", [authJwt.checkToken], userAccess);

@@ -100,5 +100,19 @@ module.exports = {
           });
       });
 
+  },
+  viewUser: async (req, res) => {
+    try {
+      const user = await User.find()
+      res.status(200).json({
+        message: 'view Data user',
+        data : user
+      })
+    } catch (error) {
+      res.status(400).json({
+        message: `Error is ${error}`
+      })
+    }
+
   }
 };

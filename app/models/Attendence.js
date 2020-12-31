@@ -4,6 +4,7 @@ const attendenceSchema = new mongoose.Schema({
     nameAttendence: [{
         scheduleId: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: 'schedules',
             required: true
         },
 
@@ -19,6 +20,7 @@ const attendenceSchema = new mongoose.Schema({
 //   {
 //     scheduleId: {
 //       type: mongoose.Schema.Types.ObjectId,
+//       ref: 'schedules',
 //       required: true,
 //     },
 

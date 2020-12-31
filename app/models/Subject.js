@@ -25,5 +25,5 @@ const classSchema = new mongoose.Schema({
    
 });
 
-const School = new mongoose.model('schools', classSchema);
-module.exports = {Schpol}
+const Subject = new mongoose.model('subjects', classSchema);
+module.exports = {Subject}

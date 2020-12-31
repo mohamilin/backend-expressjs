@@ -5,6 +5,7 @@ const moment = require("moment");
 const scheduleSchema = new mongoose.Schema({
     subjectId: {
         type: String,
+        ref: 'subjects',
         required: true
     },
     time: [{
@@ -13,11 +14,11 @@ const scheduleSchema = new mongoose.Schema({
             required: true
         },
         start: {
-            type: moment().format('LT'),
+            type:  Date,
             required: true
         },
         end: {
-            type: moment().format('LT'),
+            type: Date,
             required: true
         }
     }],
